@@ -25,9 +25,8 @@
         </div>
         <div class="slider">
 
-            <div class="slider-image" v-for="(img, index) in images">
+            <div class="slider-image" v-for="(img, index) in images" :class="{active: index === activeIndex}">
                 <img :src="'img/'+ img.image" alt="">
-                <div v-show="" class="overlay"></div>
             </div>
 
             <div class="buttons">
