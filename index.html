@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vue Carosel</title>
+    <!-- font awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- style -->
     <link rel="stylesheet" href="css/style.css">
     <!-- vue script -->
@@ -13,25 +15,26 @@
     <script src="js/script.js" defer></script>
 </head>
 <body>
-    <div class="container">
-        <div class="image img-1">
-            <div class="description">
-                <h2 id="title">Marvel's Spiderman Miles Morale</h2>
-                <p id="subtitle">Experience the rise of Miles Morales as the new hero masters incredible, explosive new powers to become his own Spider-Man</p>
-            </div>
+    <div id="container">
+        <div class="main-image">
+            <img v-bind:src="'img/'+ images[activeIndex].image" alt="">
+            <div class="desc">
+                <h1 class="title">{{ images[activeIndex].title }}</h1>
+                <h4 class="text">{{ images[activeIndex].text }}</h4>
+            </div>           
         </div>
         <div class="slider">
-            <div class="buttons">
-                <div class="btn-up">></div>
-                <div class="btn-down">></div>
+
+            <div class="slider-image" v-for="(img, index) in images">
+                <img :src="'img/'+ img.image" alt="">
+                <div v-show="" class="overlay"></div>
             </div>
-            <div class="slider-img img-1 white-border"></div>
-            <div class="slider-img img-2"><div class="overlay"></div></div>
-            <div class="slider-img img-3"><div class="overlay"></div></div>
-            <div class="slider-img img-4"><div class="overlay"></div></div>
-            <div class="slider-img img-5"><div class="overlay"></div></div>
+
+            <div class="buttons">
+                <div class="up"><i class="fa-solid fa-chevron-up" @click="goUp"></i></div>
+                <div class="down"><i class="fa-solid fa-chevron-down" @click="goDown"></i></div>
+            </div>
         </div>
     </div>
-    
 </body>
 </html>
