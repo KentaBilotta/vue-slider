@@ -34,19 +34,15 @@ const container = new Vue({
         goUp() {
             if (this.activeIndex === 0){
                 this.activeIndex = this.images.length - 1;
-                console.log(this.activeIndex);
             } else {
                 this.activeIndex--;
-                console.log(this.activeIndex);
             }
         },
         goDown() {
             if (this.activeIndex === this.images.length - 1){
                 this.activeIndex = 0;
-                console.log(this.activeIndex);
             } else {
                 this.activeIndex++;
-                console.log(this.activeIndex);
             }
         }
     }
