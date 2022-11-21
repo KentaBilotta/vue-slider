@@ -25,7 +25,7 @@
         </div>
         <div class="slider">
 
-            <div class="slider-image" v-for="(img, index) in images" :class="{active: index === activeIndex}">
+            <div class="slider-image" v-for="(img, index) in images" :class="index === activeIndex ? 'active' : ''">
                 <img :src="'img/'+ img.image" alt="">
             </div>
 
